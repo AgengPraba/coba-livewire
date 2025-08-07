@@ -9,6 +9,8 @@ use App\Livewire\Contact;
 use App\Livewire\Blog;
 use App\Livewire\Posts\Index;
 
+use App\Livewire\Counter;
+
 
 Route::get('/', Welcome::class);
 Route::get('/home', Home::class);
@@ -19,3 +21,6 @@ Route::get('/blogs', Blog::class)->name('blogs');
 Route::prefix('posts')->group(function () {
   Route::get('/', Index::class)->name('posts.index');
 });
+
+
+Route::get('/counter', Counter::class);

@@ -9,7 +9,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div>
+    <div class="flex flex-col min-h-screen">
         <div class="navbar bg-base-100 shadow-sm">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -55,13 +55,18 @@
             </div>
         </div>
 
-        <main class="container mx-auto p-4">
-            @yield('content')
-
-            {{-- Include Livewire scripts --}}
-            @livewireScripts
+        <main class="container mx-auto p-4 grow">
+            {{  $slot }}
+            {{-- @yield('content') --}}
         </main>
+
+        <footer class="footer sm:footer-horizontal footer-center bg-neutral text-white p-4 grow-0">
+            <aside>
+                <p>Copyright ©@php echo date('Y'); @endphp - All right reserved by MyBlog</p>
+            </aside>
+        </footer>
     </div>
+     <x-toast position="toast-top toast-center" />
 </body>
 
 </html>
