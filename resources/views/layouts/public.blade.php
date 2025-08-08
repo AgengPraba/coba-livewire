@@ -23,7 +23,7 @@
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <x-menu activate-by-route>
-                            <li><x-menu-item title="Home" icon="o-home" link="/home" /></li>
+                            <li><x-menu-item title="Home" icon="o-home" link="/" /></li>
                             <li><x-menu-item title="About" icon="o-information-circle" link="/about" /></li>
                             <li><x-menu-item title="Posts" icon="o-newspaper" link="/posts" /></li>
                             <li><x-menu-item title="Contact" icon="o-book-open" link="/contact" /></li>
@@ -34,7 +34,7 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <x-menu activate-by-route class="menu menu-horizontal px-1">
-                    <x-menu-item title="Home" icon="o-home" link="/home" />
+                    <x-menu-item title="Home" icon="o-home" link="/" />
                     <x-menu-item title="About" icon="o-information-circle" link="/about" />
                     <x-menu-item title="Blogs" icon="o-newspaper" link="/blogs" />
                     <x-menu-item title="Contact" icon="o-book-open" link="/contact" />
@@ -56,7 +56,7 @@
         </div>
 
         <main class="container mx-auto p-4 grow">
-            {{  $slot }}
+            {{ $slot }}
             {{-- @yield('content') --}}
         </main>
 
@@ -66,7 +66,7 @@
             </aside>
         </footer>
     </div>
-     <x-toast position="toast-top toast-center" />
+    <x-toast position="toast-top toast-center" />
 </body>
 
 </html>
