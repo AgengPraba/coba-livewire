@@ -22,13 +22,18 @@ Route::prefix('admin')->group(function () {
   Route::get('/', AdminDashboardIndex::class)->name('admin.dashboard.index');
 
   Route::prefix('blogs')->group(function () {
-    Route::get('/', AdminBlogIndex::class)->name('admin.blogs.index');
+    Route::get('/', AdminBlogIndex::class)->name('admin.blog.index');
+    Route::get('/create', \App\Livewire\Admin\Blog\Create::class)->name('admin.blog.create');
+    Route::get('/{id}/edit', \App\Livewire\Admin\Blog\Update::class)->name('admin.blog.edit');
+    Route::get('/{id}', \App\Livewire\Admin\Blog\Show::class)->name('admin.blog.show');
   });
 
   Route::prefix('categories')->group(function () {
     Route::get('/', \App\Livewire\Admin\Category\Index::class)->name('admin.categories.index');
   });
+
+  Route::prefix('messages')->group(function () {
+    Route::get('/', \App\Livewire\Admin\Messages\Index::class)->name('admin.messages.index');
+  });
+
 });
-
-
-Route::get('/counter', Counter::class);
